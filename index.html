@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style>
+    .active{
+    background-color: #FF1F3D;
+    color: white;
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="navbar w-12/13 m-6 flex justify-between  border-b-2 border-[#E2DFF4]">
+            <div class="logo">
+                <img src="/image/Logo.png" alt="logo">
+            </div>
+            <div class="search" id="search_input">
+                <label class="input">
+  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input type="search" required placeholder="Search" />
+</label>
+            </div>
+            <div class="sort">
+                <button class="bg-[#FF1F3D] p-1">sort to view</button>
+            </div>
+        </div>
+
+        <div class="button_collection  flex justify-center gap-5 items-center "  id="catagories_container">
+            <div class="buttons " id="btn-all" onclick="LoadVideos()">
+                <button class=" py-1 px-3 ">All</button>
+                
+            </div>
+
+        </div>
+         
+    </header>
+
+    <section >
+        <div class="videos  grid lg:grid-cols-4 w-12/13 m-6 gap-5" id="video_container">
+                    
+        </div>
+        <!-- <div class="col-span-full flex flex-col justify-center items-center text-center">
+            <div>
+                <img src="/image/Icon.png">
+            </div>
+            <div >
+                <h2 class="text-3xl text-bold">Oops!! Sorry, There is no content here</h2>
+            </div>    
+        </div> -->
+    </section>
+    <section id="loader" class="text-center py-10 hidden">
+      <span class="loading loading-dots loading-xl"></span>
+    </section>
+    <section>
+        <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="video_details" class="modal">
+  <div class="modal-box">
+    <div id="details_container"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    </section>
+<script src="script/index.js"></script>
+    
+</body>
+</html>
